@@ -48,11 +48,11 @@ function Friend({ friend }) {
       <h3>
         {friend.name}
 
-        {friend.balance < 0 && (
+        {/* {friend.balance < 0 && (
           <p className="red">
             you owe {friend.name} {friend.balance}}
           </p>
-        )}
+        )} */}
       </h3>
     </li>
   );
