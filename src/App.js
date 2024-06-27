@@ -24,6 +24,7 @@ export default function Apps() {
     <div className="app">
       <div className="sidebar">
         <FriendsList />
+        <FormAddFriend />
       </div>
     </div>
   );
@@ -61,7 +62,25 @@ function Friend({ friend }) {
         <p className="red">you and {friend.name} are even </p>
       )}
 
-      <button className="button">Select</button>
+      <Button>Select</Button>
     </li>
+  );
+}
+
+function Button({ children }) {
+  return <button className="button">{children}</button>;
+}
+
+function FormAddFriend() {
+  return (
+    <form className="form-add-friend">
+      <label>👯Friend Name</label>
+      <input type="text" />
+
+      <label>🌄 Image URL</label>
+      <input type="text" />
+
+      <Button>Add</Button>
+    </form>
   );
 }
