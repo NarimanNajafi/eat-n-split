@@ -39,6 +39,7 @@ export default function Apps() {
 
   function handleAddFriend(friend) {
     setFriends((friends) => [...friends, friend]);
+    setShowAddFriend(false);
   }
   return (
     <div className="app">
@@ -56,8 +57,6 @@ export default function Apps() {
 }
 
 function FriendsList({ friends }) {
-  // const friends = initialFriends;
-
   return (
     <ul>
       {friends.map((friend) => (
@@ -92,7 +91,7 @@ function Friend({ friend }) {
   );
 }
 
-function FormAddFriend() {
+function FormAddFriend({ onAddFriend }) {
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
 
@@ -109,7 +108,10 @@ function FormAddFriend() {
       balance: 0,
     };
 
-    console.log(newFriend);
+    onAddFriend(newFriend);
+    setName('');
+    setImage('https://i.pravatar.cc/48');
+    // console.log(newFriend);
   }
 
   return (
